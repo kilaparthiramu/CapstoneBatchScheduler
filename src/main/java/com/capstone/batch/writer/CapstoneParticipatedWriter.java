@@ -13,7 +13,7 @@ public class CapstoneParticipatedWriter implements ItemWriter<OutreachEventInfor
 	@Override
 	public void write(List<? extends OutreachEventInformation> outreachEventInfoList) throws Exception {
 		for(OutreachEventInformation outreachEventInformation: outreachEventInfoList) {
-			System.out.println(outreachEventInformation);
+			//System.out.println(outreachEventInformation);
 		}		
 	}
 }

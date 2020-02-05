@@ -2,14 +2,13 @@ package com.capstone.batch.model;
 
 import java.util.Date;
 
-public class VolunteerNotPrticipated {
-	
+public class VolunteerUnregistered {
 	private String eventId;
 	private String eventName;
 	private String beneficiaryName;
 	private String baseLocation;
 	private Date eventDate;
-	private Double employeeId;
+	private String employeeId;
 	
 	public String getEventId() {
 		return eventId;
@@ -41,13 +40,20 @@ public class VolunteerNotPrticipated {
 	public void setEventDate(Date eventDate) {
 		this.eventDate = eventDate;
 	}
-	public Double getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
-	public void setEmployeeId(Double employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 	
+	@Override
+	public String toString() {
+		return "VolunteerUnregistered [eventId=" + eventId + ", eventName="
+				+ eventName + ", beneficiaryName=" + beneficiaryName
+				+ ", baseLocation=" + baseLocation + ", eventDate=" + eventDate
+				+ ", employeeId=" + employeeId + "]";
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -73,7 +79,7 @@ public class VolunteerNotPrticipated {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		VolunteerNotPrticipated other = (VolunteerNotPrticipated) obj;
+		VolunteerUnregistered other = (VolunteerUnregistered) obj;
 		if (baseLocation == null) {
 			if (other.baseLocation != null)
 				return false;
@@ -106,20 +112,4 @@ public class VolunteerNotPrticipated {
 			return false;
 		return true;
 	}
-	@Override
-	public String toString() {
-		return "VolunteerNotPrticipated [eventId=" + eventId + ", eventName="
-				+ eventName + ", beneficiaryName=" + beneficiaryName
-				+ ", baseLocation=" + baseLocation + ", eventDate=" + eventDate
-				+ ", employeeId=" + employeeId + ", getEventId()="
-				+ getEventId() + ", getEventName()=" + getEventName()
-				+ ", getBeneficiaryName()=" + getBeneficiaryName()
-				+ ", getBaseLocation()=" + getBaseLocation()
-				+ ", getEventDate()=" + getEventDate() + ", getEmployeeId()="
-				+ getEmployeeId() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
-	}
-
-
 }

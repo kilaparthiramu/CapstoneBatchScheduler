@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.capstone.batch.model.OutreachEventInformation;
 import com.capstone.batch.model.VolunteerNotPrticipated;
+import com.capstone.batch.model.VolunteerUnregistered;
 
 @Configuration
 @EnableBatchProcessing
@@ -44,6 +45,15 @@ public class CapstoneBatchConfig {
 	@Autowired
 	ItemWriter<VolunteerNotPrticipated> notParticipatedWriter;
 	
+	@Autowired
+	ItemReader<VolunteerUnregistered> unregisteredRedaer;
+	
+	@Autowired
+	ItemProcessor<VolunteerUnregistered, VolunteerUnregistered> unregisteredProcessor;
+	
+	@Autowired
+	ItemWriter<VolunteerUnregistered> unregisteredWriter;
+	
 	@Bean
     public Job job(JobBuilderFactory jobBuilderFactory, 
     		StepBuilderFactory stepBuilderFactory) {
@@ -61,11 +71,20 @@ public class CapstoneBatchConfig {
                 .processor(notParticipatedProcessor)
                 .writer(notParticipatedWriter)
                 .build();
+        
+        Step unRegisteredStep = stepBuilderFactory.get("ETL-file-load")
+                .<VolunteerUnregistered, VolunteerUnregistered>chunk(100)
+                .reader(unregisteredRedaer)
+                .processor(unregisteredProcessor)
+                .writer(unregisteredWriter)
+                .build();
 
 
         return jobBuilderFactory.get("ETL-Load")
                 .incrementer(new RunIdIncrementer())
-                .start(participatedStep).next(notParticipatedStep)
+                .start(participatedStep)
+                .next(notParticipatedStep)
+                .next(unRegisteredStep)
                 .build();
     }
 
