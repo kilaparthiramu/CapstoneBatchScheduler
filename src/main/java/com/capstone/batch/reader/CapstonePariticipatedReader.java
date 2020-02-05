@@ -23,6 +23,5 @@ public class CapstonePariticipatedReader {
         reader.setRowMapper(new CasptoneParticipatedMapper());
         return reader;
     }
-
 }
 

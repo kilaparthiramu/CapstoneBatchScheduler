@@ -18,6 +18,7 @@ public class OutreachEventInformation {
 	private String iiepCategory;
 	private Double employeeId;
 	private String employeeName;
+	
 	private Double volunteerHours;
 	private Double travelHours;
 	private String businessUnit;
