@@ -1,4 +1,4 @@
-package com.capstone.batch.config.outreachinformation;
+package com.capstone.batch.mapper;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import com.capstone.batch.model.OutreachEventInformation;
 
 @Component
-public class CapstoneOutReachMapper implements RowMapper<OutreachEventInformation>{
+public class CasptoneParticipatedMapper implements RowMapper<OutreachEventInformation>{
 	
 	List<OutreachEventInformation> list = new ArrayList<OutreachEventInformation>();
 	

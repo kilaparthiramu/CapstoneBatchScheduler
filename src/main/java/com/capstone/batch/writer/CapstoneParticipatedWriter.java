@@ -1,4 +1,4 @@
-package com.capstone.batch.config.outreachinformation;
+package com.capstone.batch.writer;
 
 import java.util.List;
 
@@ -7,15 +7,13 @@ import org.springframework.stereotype.Component;
 
 import com.capstone.batch.model.OutreachEventInformation;
 
-
 @Component
-public class CapstoneOutReachInfoWriter implements ItemWriter<OutreachEventInformation> {
+public class CapstoneParticipatedWriter implements ItemWriter<OutreachEventInformation> {
 	
 	@Override
 	public void write(List<? extends OutreachEventInformation> outreachEventInfoList) throws Exception {
 		for(OutreachEventInformation outreachEventInformation: outreachEventInfoList) {
+			System.out.println(outreachEventInformation);
 		}		
 	}
-
-	
 }
