@@ -65,27 +65,27 @@ public class CapstoneBatchConfig {
                 .writer(participatedWriter)
                 .build();
         
-        Step notParticipatedStep = stepBuilderFactory.get("ETL-file-load")
+        /*Step notParticipatedStep = stepBuilderFactory.get("ETL-file-load")
                 .<VolunteerNotPrticipated, VolunteerNotPrticipated>chunk(100)
                 .reader(notParticipatedRedaer)
                 .processor(notParticipatedProcessor)
                 .writer(notParticipatedWriter)
-                .build();
+                .build();*/
         
-        Step unRegisteredStep = stepBuilderFactory.get("ETL-file-load")
+        /*Step unRegisteredStep = stepBuilderFactory.get("ETL-file-load")
                 .<VolunteerUnregistered, VolunteerUnregistered>chunk(100)
                 .reader(unregisteredRedaer)
                 .processor(unregisteredProcessor)
                 .writer(unregisteredWriter)
-                .build();
+                .build();*/
 
 
         return jobBuilderFactory.get("ETL-Load")
                 .incrementer(new RunIdIncrementer())
-                .start(participatedStep)
-                .next(notParticipatedStep)
-                .next(unRegisteredStep)
-                .build();
+                .start(participatedStep).build();
+                //.next(notParticipatedStep)
+                //.next(unRegisteredStep)
+                
     }
 
 }

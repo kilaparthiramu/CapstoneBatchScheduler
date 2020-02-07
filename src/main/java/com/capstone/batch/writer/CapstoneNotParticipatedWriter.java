@@ -14,7 +14,7 @@ public class CapstoneNotParticipatedWriter implements ItemWriter<VolunteerNotPrt
 	@Override
 	public void write(List<? extends VolunteerNotPrticipated> volunteerNotPrticipatedList) throws Exception {
 		for(VolunteerNotPrticipated volunteerNotPrticipated: volunteerNotPrticipatedList) {
-			//System.out.println(volunteerNotPrticipated);
+			System.out.println(volunteerNotPrticipated);
 		}		
 	}
 }

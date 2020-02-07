@@ -1,6 +1,5 @@
 package com.capstone.batch.mapper;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,20 +18,20 @@ public class CasptoneParticipatedMapper implements RowMapper<OutreachEventInform
 	public OutreachEventInformation mapRow(RowSet rs) throws Exception {
 		OutreachEventInformation outreachEventInformation = new OutreachEventInformation();
 		outreachEventInformation.setEventId(rs.getColumnValue(0));
-		outreachEventInformation.setBaseLocation(rs.getColumnValue(1));
-		outreachEventInformation.setBeneficiaryName(rs.getColumnValue(2));
-		outreachEventInformation.setCouncilName(rs.getColumnValue(3));
+		//outreachEventInformation.setBaseLocation(rs.getColumnValue(1));
+		//outreachEventInformation.setBeneficiaryName(rs.getColumnValue(2));
+		//outreachEventInformation.setCouncilName(rs.getColumnValue(3));
 		outreachEventInformation.setEventName(rs.getColumnValue(4));
-		outreachEventInformation.setEventDescription(rs.getColumnValue(5));
-		outreachEventInformation.setEventDate((new SimpleDateFormat("dd-MM-yyyy").parse(rs.getColumnValue(6))));
-		outreachEventInformation.setEmployeeId(Double.parseDouble(rs.getColumnValue(7)));
+		//outreachEventInformation.setEventDescription(rs.getColumnValue(5));
+		//outreachEventInformation.setEventDate((new SimpleDateFormat("dd-MM-yyyy").parse(rs.getColumnValue(6))));
+		outreachEventInformation.setEmployeeId(rs.getColumnValue(7));
 		outreachEventInformation.setEmployeeName(rs.getColumnValue(8));
-		outreachEventInformation.setVolunteerHours(Double.parseDouble(rs.getColumnValue(9)));
-		outreachEventInformation.setTravelHours(Double.parseDouble(rs.getColumnValue(10)));
-		outreachEventInformation.setLivesImpacted(Double.parseDouble(rs.getColumnValue(11)));
-		outreachEventInformation.setBusinessUnit(rs.getColumnValue(12));
-		outreachEventInformation.setStatus(rs.getColumnValue(13));
-		outreachEventInformation.setIiepCategory(rs.getColumnValue(14));
+		//outreachEventInformation.setVolunteerHours(Double.parseDouble(rs.getColumnValue(9)));
+		//outreachEventInformation.setTravelHours(Double.parseDouble(rs.getColumnValue(10)));
+		//outreachEventInformation.setLivesImpacted(Double.parseDouble(rs.getColumnValue(11)));
+		//outreachEventInformation.setBusinessUnit(rs.getColumnValue(12));
+		//outreachEventInformation.setStatus(rs.getColumnValue(13));
+		//outreachEventInformation.setIiepCategory(rs.getColumnValue(14));
 		return outreachEventInformation;
 	}
 
